@@ -22,3 +22,11 @@ TO-DOs:
     => Update urls.py ✔️
         * from app
 
+- Urls modification:
+    => change urls.py with accurate naming
+        * from project
+        * from the app
+
+- FE changes:
+    => landing
+
