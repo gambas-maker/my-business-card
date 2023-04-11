@@ -14,9 +14,11 @@ TO-DOs:
         * user_login
         * user_logout
         * registration
-    => Create the html:
+    => Create the html ✔️
         * login.html
         * registration.html
-    => Update urls.py:
+    => Update the html ✔️
+        * base.html
+    => Update urls.py ✔️
         * from app
-        
+

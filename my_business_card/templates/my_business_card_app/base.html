@@ -25,6 +25,11 @@
               <li class="nav-item">
                 <a class="nav-link disabled">Personal</a>
               </li>
+              {% if user.is_authenticated %}
+                <li><a class="navbar-link" href="{% url 'logout' %}">Log-out</a></li>
+              {% else %}
+                <li><a class="navbar-link" href="{% url 'my_business_card_app:login' %}">Log-in</a></li> 
+              {% endif %}
             </ul>
           </div>
         </div>

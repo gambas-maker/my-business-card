@@ -1,8 +1,8 @@
 from django import forms 
-from my_business_card_app.models import User, UserProfile
+from django.contrib.auth.models import User
+from my_business_card_app.models import UserProfile
 
 class UserForm(forms.ModelForm):
-    
     password = forms.CharField(widget=forms.PasswordInput())
 
     class Meta:

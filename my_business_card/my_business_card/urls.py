@@ -18,7 +18,8 @@ from django.urls import path, include
 from my_business_card_app import views
 
 urlpatterns = [
-    path('', include('my_business_card_app.urls')),
+    path('perso/', include('my_business_card_app.urls')),
     path('', views.index, name='index'),
     path('admin/', admin.site.urls),
+    path('logout/', views.user_logout, name='logout'),
 ]

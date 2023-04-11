@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from my_business_card_app import forms
 from django.http import HttpResponse, HttpResponseRedirect
 from my_business_card_app.forms import UserForm, UserProfileForm
 from django.contrib.auth import login, logout, authenticate
@@ -27,7 +28,7 @@ def user_login(request):
         user = authenticate(username=username, password=password)
 
         if user:
-            if user.is_active():
+            if user.is_active:
                 login(request, user)
                 return HttpResponseRedirect(reverse('index'))
             else:
@@ -58,10 +59,13 @@ def registration(request):
                 profile.save()
 
                 registered = True
+                return HttpResponseRedirect("/perso/login/")
         else:
             print(user_form.errors, profile_form.errors)
     else:
-        user = UserForm()
-        profile = UserProfileForm
+        user_form = UserForm()
+        profile_form = UserProfileForm()
 
-        return render(request, 'my_business_card_app/login.html')
+        return render(request, 'my_business_card_app/registration.html', {'user_form':user_form,
+                                                                            'profile_form': profile_form,
+                                                                            'registered': registered})
